@@ -20,7 +20,7 @@ aereo4 = {
     "codice": "ab-4",
     "modello": "B2",
     "ore_volo": 575,
-    "controlli_ok": True
+    "controlli_ok": False
 }
 
 aerei = []
@@ -28,6 +28,14 @@ aerei.append(aereo1)
 aerei.append(aereo2)
 aerei.append(aereo3)
 aerei.append(aereo4)
+
+limite_ore = 550
+
+def filtra_controlli_non_validi(aeromobili) -> list:
+    return [aereo for aereo in aeromobili if aereo['controlli_ok'] == False]
+
+def filtra_oltre_soglia(aeromobili) -> list:
+    return [aereo for aereo in aeromobili if aereo['ore_volo'] > limite_ore]
 
 def stampa_riepilogo(aeromobili):
     for aereo in aeromobili:
