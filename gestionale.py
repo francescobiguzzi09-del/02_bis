@@ -29,10 +29,7 @@ aerei.append(aereo2)
 aerei.append(aereo3)
 aerei.append(aereo4)
 
-<<<<<<< Updated upstream
 
-=======
->>>>>>> Stashed changes
 
 def filtra_controlli_non_validi(aeromobili) -> list:
     return [aereo for aereo in aeromobili if aereo['controlli_ok'] == False]
@@ -48,7 +45,7 @@ def stampa_riepilogo(aeromobili):
         print(f"Codice: {aereo['codice']}, Modello: {aereo['modello']}, Ore volo: {aereo['ore_volo']}, Controlli: {'yes' if aereo['controlli_ok'] else 'no'}")
 
 if __name__ == "__main__":
-    limite_ore = 550
+    limite_ore = 800
     print("LISTA DEGLI AEROMOBILI: ")
     stampa_riepilogo(aerei)
     print()
