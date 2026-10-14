@@ -29,15 +29,18 @@ aerei.append(aereo2)
 aerei.append(aereo3)
 aerei.append(aereo4)
 
-limite_ore = 550
+
 
 def filtra_controlli_non_validi(aeromobili) -> list:
     return [aereo for aereo in aeromobili if aereo['controlli_ok'] == False]
 
-def filtra_oltre_soglia(aeromobili) -> list:
-    return [aereo for aereo in aeromobili if aereo['ore_volo'] > limite_ore]
+def filtra_oltre_soglia(aeromobili, limite) -> list:
+    return [aereo for aereo in aeromobili if aereo['ore_volo'] > limite]
 
 def stampa_riepilogo(aeromobili):
+    if not aeromobili:
+        print("La lista è vuota! Nessun dato da stampare.")
+        return
     for aereo in aeromobili:
         print(f"Codice: {aereo['codice']}, Modello: {aereo['modello']}, Ore volo: {aereo['ore_volo']}, Controlli: {'yes' if aereo['controlli_ok'] else 'no'}")
 
